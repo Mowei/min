@@ -1,78 +1,72 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>溯源旅程</title>
-    <meta charset="utf-8">
-    <script src="assets/js/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/main_css_a02.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/a02.css">
-
-
-    <style>
-        div {
-            padding-top: 10px;
-            padding-right: 10px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
-
 <body style="background-color:#87CEFA;">
-
-    <!-- Fixed navbar -->
-    <div id="green">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <div>
-                <li><a href="#" id="logout">登出</a></li>
-                <li><a href="/Mainpage.html">首頁</a></li>
-                <li><a href="StartGame.html">關卡地圖</a></li>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="./Mainpage.html" class="navbar-brand">首頁</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="logout">登出</a></li>
+                    <li><a href="./Mainpage.html">首頁</a></li>
+                    <li><a href="./StartGame.html">關卡地圖</a></li>
+                </ul>
             </div>
         </div>
-    </div>
-    <div class="container">
+    </nav>
+
+
+    <div class="container body-content">
         <div class="row" align="center">
-            <h3>第二關-生活</h3>
-        </div>
-        <div class="col-lg-4">
-        </div>
-        <div class="col-lg-4" align="center">
-            <div class="card" style="width: 18rem;"> <img src="images/02.jpg" height="107" width="150" class="card-img-top" alt="...">
-            </div>
-            <div class="upload-content">
-                <div class="content-img">
-                    <ul class="content-img-list">
-                    </ul>
-                    <div class="file">
-                        <i class="ico-plus"></i>請點我上傳喔～<input type="file" name="file" accept="image/*" id="upload">
-                    </div>
-                </div>
-            </div>
-            <div class="upload-submit" id="uploadbtn">
-                <a href="javascript:;" id="btn-submit-upload" class="btn-submit-upload">提交</a>
-            </div>
-            <div id="nextcheck">
-                <button type="button" class="btn btn-primary" id="btnnext" onClick="javascript:location.href='a03.html'">下一關～</button>
+            <div class="col-md-3">
+                <h3>第二關-生活</h3>
             </div>
 
+            <div style="padding:5px"></div>
+            <div class="col-lg-4">
+
+                <p>
+                    在社群網站上分享這次的回憶吧!
+                </p>
+                <button class="btn btn-primary" onClick="javascript:location.href='a03.html'">下一關～</button>
+
+                <a href="images/55.jpg" data-lightbox="images/55.jpg" data-title="第一關解答" id="image1"></a>
+            </div>
         </div>
-        <div class="col-lg-4">
-        </div>
+
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/a02.js"></script>
+
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <script src="assets/js/lightbox-plus-jquery.min.js"></script>
+
     <script language="javascript">
-        $("#nextcheck").hide();
-        $("#uploadbtn").hide();
-        $("#logout").click(function() {
-            $.getJSON("destroy_session.php", function() {})
-            window.location.href = "index.php";
+
+        $("#logout").click(function () {
+            document.cookie = "TeamName=; expire=Thu, 18 Dec 2013 12:00:00 GMT;";
+            window.location.href = "index.html";
         })
+
     </script>
+
+
 </body>
 </html>
