@@ -22,8 +22,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/Index">登出</a></li>
-                    <li><a href="/Mainpage.php">首頁</a></li>
+                    <li><a href="#" id="logout">登出</a></li>
+                    <li><a href="/Mainpage.html">首頁</a></li>
                     <li><a href="/StartGame.html">關卡地圖</a></li>
                 </ul>
             </div>
@@ -82,6 +82,11 @@
                 }
             }
         }
+
+        $("#logout").click(function () {
+            document.cookie = "TeamName=; expire=Thu, 18 Dec 2013 12:00:00 GMT;";
+            window.location.href = "index.html";
+        })
 
     </script>
 
