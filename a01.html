@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <script src="assets/js/jquery.min.js"></script>
+
+    <title>溯源旅程</title>
+    <style>
+        div {
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+
+    </style>
+</head>
+
+<body style="background-color:#87CEFA;">
+
+    <!-- Fixed navbar -->
+    <div id="green">
+        <div class="container">
+            <div>
+                <li><a href="#" id="logout">登出</a></li>
+                <li><a href="Mainpage.php">首頁</a></li>
+                <li><a href="StartGame.php">關卡地圖</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" align="center">
+            <h3>第一關-歷史</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4" align="center">
+                <div class="card" style="width: 18rem;"> <a href="a01.html"><img src="images/01.jpg" height="107" width="150" class="card-img-top" alt="..."></a>
+                    <input type="text" class="form-control" placeholder="請輸入答案" id="Input1">
+                </div>
+            </div>
+            <div class="col-lg-4">
+            </div>
+        </div>
+    </div>
+    <div class="row" align="center">
+        <button type="button" class="btn btn-primary" id="q1click" onClick="myFunction()">我非常確定!</button>
+        <div id="nextcheck">
+            <button type="button" class="btn btn-primary" id="btnnext" onClick="javascript:location.href='a02.html'">下一關～</button>
+        </div>
+    </div>
+
+    <div>
+        <a href="images/55.jpg" data-lightbox="images/55.jpg" data-title="第一關解答" id="image1"><img src=images/55.jpg weight="0px" height="0px"></a>
+    </div>
+
+
+    <script src="assets/js/lightbox-plus-jquery.min.js"></script>
+
+    <script language="javascript">
+        var hinttime = 0;
+        $("#nextcheck").hide();
+
+        function myFunction() {
+            var Answar = document.getElementById("Input1").value;
+            if (Answar == "北新路一段四十五巷" || Answar == "北新路1段45巷" || Answar == "北新路1段四十五巷" || Answar == "北新路一段45巷") {
+                document.getElementById("image1").click();
+                $.getJSON("round-process-update.php", {
+                    round: 'CP2',
+                    SID: 'R2'
+                }, function() {
+                    //                alert(php_script_response);
+                })
+                $("#nextcheck").show();
+            } else {
+                if (hinttime == 3) {
+                    alert("答錯摟 但還是給你個提示吧：提示一");
+                    hinttime++;
+                } else if (hinttime == 5) {
+                    alert("答錯摟 再給你個提示吧：提示二");
+                    hinttime++;
+                } else {
+                    alert("答錯摟～");
+                    hinttime++;
+                }
+            }
+        }
+        $("#logout").click(function() {
+            $.getJSON("destroy_session.php", function() {})
+            window.location.href = "index.php";
+        })
+
+    </script>
+</body>
+
+</html>

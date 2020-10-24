@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>領取手冊</title>
+
+    <script src="assets/js/jquery.min.js"></script>
+
+    <!--Bootsrap 4 CDN-->
+    
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body style="background-color:#87CEFA;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <div class="header-title">
+                    <h1 class="wv-heading--title">
+                        歡迎領取冒險手冊
+                    </h1>
+                    <h2 class="wv-heading--subtitle">
+                        請完整的輸入以下的欄位
+                        以便讓我們幫你製作專屬冒險手冊
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mx-auto">
+                <div class="myform form ">
+                    <form action="" method="post" name="login">
+                        <div class="form-group" style="padding-top: 20px">
+                            <input type="text" onkeyup="value=value.replace(/[^\a-zA-Z0-9\u4E00-\u9FA5]/g,'')" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\a-zA-Z0-9\u4E00-\u9FA5]/g,''))" name="隊伍暱稱" class="form-control my-input" id="teamname" placeholder="隊伍暱稱">
+                        </div>
+                        <p>隊伍暱稱請輸入中文或英文喔，無法使用特殊字元或標點符號。</p>
+                        <div class="form-group">
+                            <input type="text" maxlength="8" name="password" class="form-control my-input" id="password" placeholder="密碼">
+                            <p>密碼請用英數組合，最多八位，註冊後無法再更改喔</p>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" maxlength="8" name="passwordcheck" class="form-control my-input" id="passwordcheck" placeholder="確認密碼">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="Membernum" id="Membernum" class="form-control my-input" placeholder="小隊人數">
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-success" id="confirm" her="#">領取你的專屬冒險手冊</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#confirm").click(function() {
+            if ($("#teamname").val().length == 0 || $("#password").val().length == 0 || $("#passwordcheck").val().length == 0 || $("#Membernum").val().length == 0) {
+                alert('有欄位還沒有填寫喔');
+            } else {
+                if ($("#password").val() == $("#passwordcheck").val()) {
+                    $.getJSON("sql-insert.php", {
+                            teamname: $("#teamname").val(),
+                            tpassword: $("#password").val(),
+                            Membernum: $("#Membernum").val()
+                        }, function(result) {
+                            if (result.res == 1) {
+                                alert("恭喜領取成功！\r 小隊編號：" + result.teamid + "(請記錄編號，日後忘記密碼可尋回) \r 小隊暱稱:" + $("#teamname").val() + "\r 小隊人數:" + $("#Membernum").val() + "人 \r 歡迎來到溯源旅程！請截圖保存此訊息喔");
+                                window.location.href = "index.php";
+                            } else if (result.res == 0) {
+                                alert("oh!這個暱稱已經被使用了喔，請嘗試別的暱稱");
+                            } else {
+                                alert("oh！出錯摟，請重新領取");
+                                window.location.href = "Signup-page.html";
+                            }
+                        })
+                        .done(function() {
+                            //                    alert('getJSON request succeeded!');
+                        })
+                        .fail(function(jqxhr, textStatus, errorThrown) {
+                            alert('getJSON request failed! ' + textStatus);
+                        })
+                } else {
+                    $("#password").val("")
+                    $("#passwordcheck").val("");
+                    alert("密碼與確認密碼不相符喔，請再輸入一次密碼");
+                }
+            };
+        });
+    </script>
+</body></html>
