@@ -118,6 +118,12 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
+
+        $("#logout").click(function () {
+            document.cookie = "TeamName=; expire=Thu, 18 Dec 2013 12:00:00 GMT;";
+            window.location.href = "index.html";
+        })
+
         /*
             $.getJSON("Round-check.php", function(result) {
                     var r2 = document.getElementById("R2");
