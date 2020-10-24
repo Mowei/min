@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +17,6 @@
             padding-bottom: 10px;
             padding-left: 10px;
         }
-
     </style>
 </head>
 
@@ -29,7 +28,7 @@
             <div>
                 <li><a href="#" id="logout">登出</a></li>
                 <li><a href="Mainpage.php">首頁</a></li>
-                <li><a href="StartGame.php">關卡地圖</a></li>
+                <li><a href="StartGame.html">關卡地圖</a></li>
             </div>
         </div>
     </div>
@@ -41,7 +40,8 @@
             <div class="col-lg-4">
             </div>
             <div class="col-lg-4" align="center">
-                <div class="card" style="width: 18rem;"> <a href="a01.html"><img src="images/01.jpg" height="107" width="150" class="card-img-top" alt="..."></a>
+                <div class="card" style="width: 18rem;">
+                    <a href="a01.html"><img src="images/01.jpg" height="107" width="150" class="card-img-top" alt="..."></a>
                     <input type="text" class="form-control" placeholder="請輸入答案" id="Input1">
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 $.getJSON("round-process-update.php", {
                     round: 'CP2',
                     SID: 'R2'
-                }, function() {
+                }, function () {
                     //                alert(php_script_response);
                 })
                 $("#nextcheck").show();
@@ -91,8 +91,8 @@
                 }
             }
         }
-        $("#logout").click(function() {
-            $.getJSON("destroy_session.php", function() {})
+        $("#logout").click(function () {
+            $.getJSON("destroy_session.php", function () { })
             window.location.href = "index.php";
         })
 

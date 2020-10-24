@@ -48,7 +48,7 @@ echo $_SESSION['R1'];
             <nav>
                 <ul>
                     <li><a href="front-video.html">前導片</a></li>
-                    <li><a href="StartGame.php">開始遊戲</a></li>
+                    <li><a href="StartGame.html">開始遊戲</a></li>
                     <li><a href="Bag.html">背包</a></li>
                     <li><a href="Contect.html">聯絡我們</a></li>
                 </ul>
