@@ -1,36 +1,41 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>溯源旅程</title>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <!-- Bootstrap core CSS -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main2.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
-    <script src="assets/js/chart.js"></script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
-
 <body style="background-color:#87CEFA;">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="./Mainpage.html" class="navbar-brand">首頁</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#" id="logout">登出</a></li>
+                    <li><a href="./Mainpage.html">首頁</a></li>
+                    <li><a href="./StartGame.html">關卡地圖</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Fixed navbar -->
-    <div>
-        <li><a href="#" id="logout">登出</a></li>
-        <li><a href="Mainpage.php">首頁</a></li>
-    </div>
-    <div class="container">
-        <div class="row centered mt grid">
+
+    <div class="container body-content">
+
+
+        <div class="row centered mt grid " align="center">
+
             <h3>尋寶日記</h3>
             <div class="mt"></div>
             <div class="col-lg-4" align="center" id="R1">
@@ -86,11 +91,9 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <section id="contact"></section>
-    <div id="social">
+
         <div class="container">
             <div class="row centered">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -109,44 +112,45 @@
                 </div>
             </div>
         </div><!-- /container -->
-    </div><!-- /social -->
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    </div>
 
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
-    /*
-        $.getJSON("Round-check.php", function(result) {
-                var r2 = document.getElementById("R2");
-                if (result.R2 != "1") {
-                    r2.style.display = "none";
-                }
-                var r3 = document.getElementById("R3");
-                if (result.R3 != "1") {
-                    r3.style.display = "none";
-                }
-                var r4 = document.getElementById("R4");
-                if (result.R4 != "1") {
-                    r4.style.display = "none";
-                }
-                var r5 = document.getElementById("R5");
-                if (result.R5 != "1") {
-                    r5.style.display = "none";
-                }
-                var r6 = document.getElementById("R6");
-                if (result.R6 != "1") {
-                    r6.style.display = "none";
-                }
-            })
-            .done(function() {
-                //                    alert('getJSON request succeeded!');
-            })
-            .fail(function(jqxhr, textStatus, errorThrown) {
-                alert('getJSON request failed! ' + textStatus);
-            })
-            */
+        /*
+            $.getJSON("Round-check.php", function(result) {
+                    var r2 = document.getElementById("R2");
+                    if (result.R2 != "1") {
+                        r2.style.display = "none";
+                    }
+                    var r3 = document.getElementById("R3");
+                    if (result.R3 != "1") {
+                        r3.style.display = "none";
+                    }
+                    var r4 = document.getElementById("R4");
+                    if (result.R4 != "1") {
+                        r4.style.display = "none";
+                    }
+                    var r5 = document.getElementById("R5");
+                    if (result.R5 != "1") {
+                        r5.style.display = "none";
+                    }
+                    var r6 = document.getElementById("R6");
+                    if (result.R6 != "1") {
+                        r6.style.display = "none";
+                    }
+                })
+                .done(function() {
+                    //                    alert('getJSON request succeeded!');
+                })
+                .fail(function(jqxhr, textStatus, errorThrown) {
+                    alert('getJSON request failed! ' + textStatus);
+                })
+                */
     </script>
-</body>
 
+</body>
 </html>
+
+
