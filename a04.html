@@ -63,8 +63,13 @@
     <script src="assets/js/site.js"></script>
 
     <script language="javascript">
-        var hinttime = 0;
 
+        var stage = readCookie("Stage");
+        if (stage >= 4) {
+            $("#nextcheck").show();
+        }
+
+        var hinttime = 0;
         function myFunction() {
             var Answar = document.getElementById("Input1").value;
             if (Answar == "捷運公館站" || Answar == "公館捷運站") {

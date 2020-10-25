@@ -63,8 +63,13 @@
     <script src="assets/js/site.js"></script>
 
     <script language="javascript">
-        var hinttime = 0;
 
+        var stage = readCookie("Stage");
+        if (stage >= 5) {
+            $("#nextcheck").show();
+        }
+
+        var hinttime = 0;
         function myFunction() {
             var Answar = document.getElementById("Input1").value;
             if (Answar == "磯永吉小屋") {
