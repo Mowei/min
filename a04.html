@@ -41,6 +41,8 @@
                 <div style="padding:5px"></div>
                 <img src="images/03.jpg" style="height:100%;width:100%" alt="...">
                 <div style="padding:5px"></div>
+                <p>紅色為起點，綠色為終點</p>
+                <div style="padding:5px"></div>
                 <input type="text" class="form-control" placeholder="請輸入答案" id="Input1">
                 <div style="padding:5px"></div>
                 <button type="button" class="btn btn-primary" id="q1click" onClick="myFunction()">我非常確定!</button>
@@ -77,10 +79,10 @@
                 $("#nextcheck").show();
             } else {
                 if (hinttime == 3) {
-                    alert("答錯摟 但還是給你個提示吧：提示一");
+                    alert("答錯摟 但還是給你個提示吧：連連看連完把紙疊起來會有意想不到的效果喔！");
                     hinttime++;
                 } else if (hinttime == 5) {
-                    alert("答錯摟 再給你個提示吧：提示二");
+                    alert("答錯摟 再給你個提示吧：答案為某一個捷運站");
                     hinttime++;
                 } else {
                     alert("答錯摟～");

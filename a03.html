@@ -41,6 +41,9 @@
                 <div style="padding:5px"></div>
                 <img src="images/03.jpg" style="height:100%;width:100%" alt="...">
                 <div style="padding:5px"></div>
+                <p>實線往外折，虛線往內摺，最後一步記得把紙「翻出顏色」！</p>
+                <p>答案為「碧潭__ __ __ __ __ __ 誌」</p>
+                <div style="padding:5px"></div>
                 <input type="text" class="form-control" placeholder="請輸入答案" id="Input1">
                 <div style="padding:5px"></div>
                 <button type="button" class="btn btn-primary" id="q1click" onClick="myFunction()">我非常確定!</button>
@@ -77,10 +80,10 @@
                 $("#nextcheck").show();
             } else {
                 if (hinttime == 3) {
-                    alert("答錯摟 但還是給你個提示吧：人:4、船:5、魚:7");
+                    alert("答錯摟 但還是給你個提示吧：人：4、船：5、魚：7");
                     hinttime++;
                 } else if (hinttime == 5) {
-                    alert("答錯摟 再給你個提示吧：提示二");
+                    alert("答錯摟 再給你個提示吧：摺出來為一艘船，答案在船正中間");
                     hinttime++;
                 } else {
                     alert("答錯摟～");
