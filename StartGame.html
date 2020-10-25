@@ -40,7 +40,7 @@
             <div class="mt"></div>
             <div class="col-lg-4" align="center" id="R1">
                 <div class="card" style="width: 18rem;">
-                    <a href="a01.html"><img src="images/mo05.png" height="150px" width="102px" class="card-img-top" alt="..."></a>
+                    <a href="a01.html"><img src="images/mo05.png" height="150" width="102" class="card-img-top" alt="..."></a>
                     <div class="card-body">
                         <p class="card-text">第一關</p>
                     </div>
@@ -117,54 +117,40 @@
 
     <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/site.js"></script>
+
     <script>
         FindTeamCookies();
 
-        $("#logout").click(function () {
-            document.cookie = "TeamName=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
-            window.location.href = "index.html";
-        })
 
-        function FindTeamCookies() {
-            var theCookies = document.cookie.split(';');
-            var aString = '';
-            for (var i = 0; i < theCookies.length; i++) {
-                if (theCookies[i].indexOf('TeamName') >= 0) {
-
-                } else {
-                    window.location.href = "index.html";
-                }
-            }
-            return aString;
-        }
-                    /*
+                        /*
 $.getJSON("Round-check.php", function(result) {
-        var r2 = document.getElementById("R2");
-        if (result.R2 != "1") {
-            r2.style.display = "none";
-        }
-        var r3 = document.getElementById("R3");
-        if (result.R3 != "1") {
-            r3.style.display = "none";
-        }
-        var r4 = document.getElementById("R4");
-        if (result.R4 != "1") {
-            r4.style.display = "none";
-        }
-        var r5 = document.getElementById("R5");
-        if (result.R5 != "1") {
-            r5.style.display = "none";
-        }
-        var r6 = document.getElementById("R6");
-        if (result.R6 != "1") {
-            r6.style.display = "none";
-        }
+var r2 = document.getElementById("R2");
+if (result.R2 != "1") {
+r2.style.display = "none";
+}
+var r3 = document.getElementById("R3");
+if (result.R3 != "1") {
+r3.style.display = "none";
+}
+var r4 = document.getElementById("R4");
+if (result.R4 != "1") {
+r4.style.display = "none";
+}
+var r5 = document.getElementById("R5");
+if (result.R5 != "1") {
+r5.style.display = "none";
+}
+var r6 = document.getElementById("R6");
+if (result.R6 != "1") {
+r6.style.display = "none";
+}
 })
 .done(function() {
-        //                    alert('getJSON request succeeded!');
+//                    alert('getJSON request succeeded!');
 })
 .fail(function(jqxhr, textStatus, errorThrown) {
-        alert('getJSON request failed! ' + textStatus);
+alert('getJSON request failed! ' + textStatus);
 })
 */
     </script>

@@ -33,12 +33,9 @@
 
     <div class="container body-content">
         <div class="row" align="center">
-            <div class="col-md-3">
-                <h3>第四關-文學</h3>
-            </div>
-
-            <div style="padding:5px"></div>
             <div class="col-lg-4">
+                <h3>第四關-文學</h3>
+                <div style="padding:5px"></div>
                 <img src="images/03.jpg" style="height:100%;width:100%" alt="...">
                 <div style="padding:5px"></div>
                 <input type="text" class="form-control" placeholder="請輸入答案" id="Input1">
@@ -60,6 +57,7 @@
 
 
     <script src="assets/js/lightbox-plus-jquery.min.js"></script>
+    <script src="assets/js/site.js"></script>
 
     <script language="javascript">
         var hinttime = 0;
@@ -83,10 +81,6 @@
             }
         }
 
-        $("#logout").click(function () {
-            document.cookie = "TeamName=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
-            window.location.href = "index.html";
-        })
 
     </script>
 

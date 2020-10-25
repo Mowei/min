@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\assets",
+    "\\assets\\css",
     "\\assets\\img",
     "\\assets\\js",
     "\\assets\\sass",
     "\\assets\\webfonts"
   ],
-  "SelectedNode": "\\upload.php",
+  "SelectedNode": "\\a06.html",
   "PreviewInSolutionExplorer": false
 }
