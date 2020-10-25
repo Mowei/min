@@ -1,5 +1,6 @@
 SetTeamNav();
 
+
 //Menu
 $("#logout").click(function () {
     eraseCookie("TeamName");
@@ -29,6 +30,13 @@ function SetTeamNav() {
         target.innerText = "探險隊:" + TeamName;
     }
 
+}
+
+function SetStage(value) {
+    var stage = readCookie("Stage");
+    if (value >= stage) {
+        createCookie("Stage", value );
+    }
 }
 
 function FindTeamCookies() {
