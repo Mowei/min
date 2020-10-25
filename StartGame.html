@@ -22,9 +22,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#" id="logout">登出</a></li>
                     <li><a href="./Mainpage.html">首頁</a></li>
                     <li><a href="./StartGame.html">關卡地圖</a></li>
+                </ul>
+                <ul id="TeamNav" class="nav navbar-nav navbar-right">
+                    <li><a id="TeamName" href="./StartGame.html" title="關卡地圖"></a></li>
+                    <li><a href="#" id="logout">登出</a></li>
                 </ul>
             </div>
         </div>
@@ -48,7 +51,7 @@
             </div>
             <div class="col-lg-4" align="center" id="R2">
                 <div class="card" style="width: 18rem;">
-                    <a href="a02.html"><img src="images/mo.png" alt="..." width="102" height="150" class="card-img-top"></a>
+                    <a href="a02.html"><img src="images/mo.png" alt="..." width="98" height="150" class="card-img-top"></a>
                     <div class="card-body">
                         <p class="card-text">第二關</p>
                     </div>
@@ -68,7 +71,7 @@
             <div class="mt"></div>
             <div class="col-lg-4" align="center" id="R4">
                 <div class="card" style="width: 18rem;">
-                    <a href="a04.html"><img src="images/mo06.png" alt="..." width="150" height="150" class="card-img-top"></a>
+                    <a href="a04.html"><img src="images/mo06.png" alt="..." width="98" height="150" class="card-img-top"></a>
                     <div class="card-body">
                         <p class="card-text">第四關</p>
                     </div>
@@ -76,7 +79,7 @@
             </div>
             <div class="col-lg-4" align="center" id="R5">
                 <div class="card" style="width: 18rem;">
-                    <a href="a05.html"><img src="images/mo04.png" alt="..." width="150" height="150" class="card-img-top"></a>
+                    <a href="a05.html"><img src="images/mo04.png" alt="..." width="98" height="150" class="card-img-top"></a>
                     <div class="card-body">
                         <p class="card-text">第五關</p>
                     </div>
@@ -84,7 +87,7 @@
             </div>
             <div class="col-lg-4" align="center" id="R6">
                 <div class="card" style="width: 18rem;">
-                    <a href="a06.html"><img src="images/mo02.png" alt="..." width="150" height="150" class="card-img-top"></a>
+                    <a href="a06.html"><img src="images/mo02.png" alt="..." width="98" height="150" class="card-img-top"></a>
                     <div class="card-body">
                         <p class="card-text">第六關</p>
                     </div>
@@ -123,36 +126,16 @@
         FindTeamCookies();
 
 
-                        /*
-$.getJSON("Round-check.php", function(result) {
-var r2 = document.getElementById("R2");
-if (result.R2 != "1") {
-r2.style.display = "none";
-}
-var r3 = document.getElementById("R3");
-if (result.R3 != "1") {
-r3.style.display = "none";
-}
-var r4 = document.getElementById("R4");
-if (result.R4 != "1") {
-r4.style.display = "none";
-}
-var r5 = document.getElementById("R5");
-if (result.R5 != "1") {
-r5.style.display = "none";
-}
-var r6 = document.getElementById("R6");
-if (result.R6 != "1") {
-r6.style.display = "none";
-}
-})
-.done(function() {
-//                    alert('getJSON request succeeded!');
-})
-.fail(function(jqxhr, textStatus, errorThrown) {
-alert('getJSON request failed! ' + textStatus);
-})
-*/
+        var stage = GetStage();
+
+        for (var i = 1; i <= 6; i++) {
+            var target = document.getElementById("R"+i);
+            if (stage >= i) {
+                target.style.display = "";
+            } else {
+                target.style.display = "none";
+            }
+        }
     </script>
 
 </body>
