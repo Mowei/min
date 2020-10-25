@@ -26,7 +26,7 @@ function SetTeamNav() {
         target.style.display = "none";
     } else {
         let target = document.getElementById("TeamName");
-        target.innerText = "±´ÀI¶¤:" + TeamName;
+        target.innerText = "æ¢éšªéšŠ:" + TeamName;
     }
 
 }
@@ -38,16 +38,16 @@ function FindTeamCookies() {
     }
 }
 
-// «Ø¥ßcookie
+// å»ºç«‹cookie
 function createCookie(name, value) {
-    expire_days = 120; // ¹L´Á¤é´Á(¤Ñ)
+    expire_days = 120; // éæœŸæ—¥æœŸ(å¤©)
     var d = new Date();
     d.setTime(d.getTime() + (expire_days * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toGMTString();
     document.cookie = name + "=" + value + "; " + expires + ";";
 
 }
-//Åª¨ú
+//è®€å–
 function readCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -58,7 +58,7 @@ function readCookie(name) {
     }
     return null;
 }
-//§R°£
+//åˆªé™¤
 function eraseCookie(name) {
     createCookie(name, "", -1);
 }
