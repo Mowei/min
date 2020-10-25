@@ -60,5 +60,5 @@ function readCookie(name) {
 }
 //刪除
 function eraseCookie(name) {
-    createCookie(name, "", -1);
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
 }
